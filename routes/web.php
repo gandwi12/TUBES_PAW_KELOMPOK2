@@ -9,3 +9,6 @@ Route::get('/jadwals', [JadwalDokterController::class, 'index'])->name('jadwals.
 Route::get('/jadwals/create', [JadwalDokterController::class, 'create'])->name('jadwals.create');
 Route::post('/jadwals', [JadwalDokterController::class, 'store'])->name('jadwals.store');
 
+use App\Http\Controllers\API\PemeriksaanControllerControllerController;
+Route::middleware(['auth'])->get('/riwayat-pemeriksaan', [PemeriksaanController::class, 'riwayatView'])->name('riwayat.pemeriksaan');
+
