@@ -11,4 +11,4 @@ class JadwalDokter extends Model
 
     protected $fillable = ['nama_dokter', 'hari', 'jam_mulai', 'jam_selesai'];
 }
-
+// 
