@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\JadwalDokterController;
+use App\Http\Controllers\PemberianObatController;
 
-Route::resource('jadwals', JadwalDokterController::class); 
-Route::get('/', [JadwalDokterController::class, 'index']);
-Route::get('/jadwals', [JadwalDokterController::class, 'index'])->name('jadwals.index');
-Route::get('/jadwals/create', [JadwalDokterController::class, 'create'])->name('jadwals.create');
-Route::post('/jadwals', [JadwalDokterController::class, 'store'])->name('jadwals.store');
+Route::resource('obats', PemberianObatController::class);
+Route::get('/', [PemberianObatController::class, 'index'])->name('obats.index');
+Route::get('/{id}', [PemberianObatController::class, 'show']);
+Route::post('/', [PemberianObatController::class, 'store']);
+Route::put('/{id}', [PemberianObatController::class, 'update']);
+Route::delete('/{id}', [PemberianObatController::class, 'destroy']);
 
