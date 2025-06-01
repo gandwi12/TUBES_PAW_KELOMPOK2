@@ -10,3 +10,6 @@ Route::post('/', [PemberianObatController::class, 'store']);
 Route::put('/{id}', [PemberianObatController::class, 'update']);
 Route::delete('/{id}', [PemberianObatController::class, 'destroy']);
 
+use App\Http\Controllers\API\PemeriksaanControllerControllerController;
+Route::middleware(['auth'])->get('/riwayat-pemeriksaan', [PemeriksaanController::class, 'riwayatView'])->name('riwayat.pemeriksaan');
+

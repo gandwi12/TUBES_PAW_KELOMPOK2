@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Examination;
 use Illuminate\Support\Facades\Auth;
 
-class ExaminationController extends Controller
+class PemeriksaanControllerController extends Controller
 {
     public function index()
     {
@@ -43,5 +43,17 @@ class ExaminationController extends Controller
             'data' => $pemeriksaan
         ]);
     }
+
+    public function riwayatView()
+{
+    $user = Auth::user();
+
+    $riwayat = Examination::where('user_id', $user->id)
+                ->orderBy('tanggal_kunjungan', 'desc')
+                ->get();
+
+    return view('riwayat_pemeriksaan', compact('riwayat'));
+}
+
 }
 
